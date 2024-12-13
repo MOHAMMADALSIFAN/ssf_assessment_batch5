@@ -11,10 +11,11 @@ import vttp.batch5.ssf.noticeboard.services.NoticeService;
 
 @RestController
 public class HealthlyController {
+
   @Autowired
   NoticeService noticeService;
 
-   @GetMapping(path = "/status", produces = { MediaType.APPLICATION_JSON_VALUE })
+   @GetMapping(path = "/status")
     public ResponseEntity<String> healthstatus() {
         Boolean isHealthy = noticeService.isHealthy();
         try {
